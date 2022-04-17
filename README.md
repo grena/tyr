@@ -5,7 +5,7 @@
 ## How to use?
 Install the CLI tool on your machine:
 ```bash
-wget https://raw.githubusercontent.com/akeneo/tyr/master/tyr.sh && chmod +x tyr.sh
+wget https://raw.githubusercontent.com/grena/tyr/main/tyr.sh && chmod +x tyr.sh
 sudo mv tyr.sh /usr/local/bin/tyr
 ```
 
@@ -30,22 +30,6 @@ Fork this repo, then:
 ```bash
 make setup
 make up
-```
-
-### Available commands
-
-```
-# Initialise le projet pour commencer à développer
-make setup
-
-# Lance le serveur du projet, et le rend disponible sur http://127.0.0.1:8000, avec adminer sur http://localhost:8080
-make up
-
-# Compile le front avec un 'watch'
-yarn watch
-
-# Lance les tests
-make setup-tests && make test
 ```
 
 ## Why Tyr?

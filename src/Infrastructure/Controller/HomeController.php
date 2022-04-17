@@ -29,7 +29,7 @@ class HomeController extends AbstractController
         $commands = $this->getCommands($file, $software, $version);
 
         if (empty($commands)) {
-            return new Response("\nNo commands found to run this test! Feel free to add instructions on how to run it: https://github.com/grena/tyr/blob/main/README.md\n\n", Response::HTTP_NOT_FOUND);
+            return new Response("\nNo commands found to run this test! Feel free to add instructions on how to run it: https://github.com/grena/tyr/blob/main/README.md#how-to-add-instructions-to-run-a-test\n\n", Response::HTTP_NOT_FOUND);
         }
 
         $stringCommands = implode("\n", $commands);

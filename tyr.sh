@@ -14,4 +14,4 @@ TYR_SOFTWARE=$(
 [[ -f CHANGELOG-6.0.md ]] && TYR_VERSION="6.0" && \
 [[ -f CHANGELOG.md ]] && TYR_VERSION="master"
 
-curl "http://0.0.0.0:8000/find?file=$1&software=$TYR_SOFTWARE&version=$TYR_VERSION"
+curl "https://tyr-test.herokuapp.com/find?file=$1&software=$TYR_SOFTWARE&version=$TYR_VERSION"
