@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ $# -eq 0 ]; then
+    echo "Please provide a path to a file:"
+    echo "tyr path/to/test/file.php"
+    exit 1
+fi
+
 # Detect if running on CE, EE, onboarder...
 TYR_SOFTWARE=$(
   cat composer.json \
