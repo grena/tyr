@@ -16,11 +16,11 @@ tyr full/path/to/your/TestFile.php
 **Important: make sure you give the path relative to the project (eg. not `DoctrineJobRepositoryIntegration.php` but `tests/back/Integration/integration/BatchBundle/Job/DoctrineJobRepositoryIntegration.php`)**
 
 ## How to add instructions to run a test?
-This tool is based on some `.yml` config files in the `config/instructions/` folder, they are really simple, take a look at them.
+This tool is based on some `.yml` config files in the https://github.com/grena/tyr/tree/main/config/instructions folder, they are really simple, take a look at them.
 
 1) Fork this repo or make the edit through GitHub web interface.
 2) Either create a new `.yml` file or edit an existing one in the `config/instructions/` folder.
-3) Tell for which `folders` the command apply
+3) Tell for which `folders` the command applies.
 4) Gives the correct `commands` to run the test.
 
 
