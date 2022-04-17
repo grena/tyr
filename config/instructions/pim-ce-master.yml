@@ -1,0 +1,26 @@
+software: pim-community-dev
+version: master
+data:
+  -
+    comment: 'An integration or end-to-end test'
+    folders:
+      - "tests/back/Integration/"
+      - "tests/back/Channel/EndToEnd/"
+      - "tests/back/Channel/Integration/"
+    commands:
+      - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c phpunit.xml.dist {{FILEPATH}}"
+
+  -
+    comment: "A unit test with PHPSpec"
+    folders:
+      - "tests/back/Acceptance/spec/"
+      - "tests/back/Channel/Specification/"
+    commands:
+      - "APP_ENV=test docker-compose run -u www-data --rm php php vendor/bin/phpspec run {{FILEPATH}}"
+
+  -
+    comment: "An integration test related to Connectivity"
+    folders:
+      - "src/Akeneo/Connectivity/Connection/back/tests/Integration/"
+    commands:
+      - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c . --testsuite Akeneo_Connectivity_Connection_Integration {{FILEPATH}}"

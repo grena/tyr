@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      COMPOSER_HOME: '/var/www/.composer'
+      PHP_IDE_CONFIG: 'serverName=tyr'
+      PHP_XDEBUG_ENABLED: 1
+      PHP_XDEBUG_IDE_KEY: PHPSTORM
+      PHP_XDEBUG_REMOTE_HOST: 172.17.0.1
+      XDEBUG_CONFIG: 'remote_host=172.17.0.1'
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./:/home/docker/client
+      - '${HOST_COMPOSER_HOME:-~/.composer}:/var/www/.composer'
+      - ./config/docker/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    working_dir: /home/docker/client
