@@ -66,6 +66,10 @@ REPONSE;
             return $instruction['software'] === $software && $instruction['version'] === $version;
         }));
 
+        if (empty($softwareVersionInstruction)) {
+            return [];
+        }
+
         foreach ($softwareVersionInstruction['data'] as $data) {
             foreach ($data['folders'] as $folder) {
                 if (str_starts_with($file, $folder)) {
