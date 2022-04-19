@@ -1,0 +1,10 @@
+software: pim-enterprise-dev
+version: master
+data:
+  -
+    comment: "An integration test related to Reference Entities"
+    folders:
+      - "src/Akeneo/ReferenceEntity/tests/back/Integration/"
+    commands:
+      - "APP_ENV=dev make up"
+      - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c src/Akeneo/ReferenceEntity/tests/back --testsuite ReferenceEntity_Integration_Test {{FILEPATH}}"
