@@ -9,7 +9,7 @@ data:
       - "tests/back/Channel/Integration/"
       - "tests/back/Pim/Enrichment/EndToEnd"
     commands:
-      - "make up"
+      - "APP_ENV=dev make up"
       - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c phpunit.xml.dist {{FILEPATH}}"
 
   -
@@ -26,7 +26,7 @@ data:
     folders:
       - "src/Akeneo/Connectivity/Connection/back/tests/Integration/"
     commands:
-      - "make up"
+      - "APP_ENV=dev make up"
       - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c . --testsuite Akeneo_Connectivity_Connection_Integration {{FILEPATH}}"
 
   -
@@ -34,5 +34,5 @@ data:
     folders:
       - "src/Akeneo/Channel/back/tests/Integration/"
     commands:
-      - "make up"
+      - "APP_ENV=dev make up"
       - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c src/Akeneo/Channel/back/tests --testsuite Channel_Integration_Test {{FILEPATH}}"
