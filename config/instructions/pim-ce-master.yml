@@ -25,3 +25,10 @@ data:
       - "src/Akeneo/Connectivity/Connection/back/tests/Integration/"
     commands:
       - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c . --testsuite Akeneo_Connectivity_Connection_Integration {{FILEPATH}}"
+
+  -
+    comment: "An integration test related to Channel"
+    folders:
+      - "src/Akeneo/Channel/back/tests/Integration/"
+    commands:
+      - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c src/Akeneo/Channel/back/tests --testsuite Channel_Integration_Test {{FILEPATH}}"
