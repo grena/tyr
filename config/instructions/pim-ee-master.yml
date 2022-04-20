@@ -13,7 +13,7 @@ data:
   -
     comment: "An integration test related to Assets"
     folders:
-      - "src/Akeneo/ReferenceEntity/tests/back/Integration/"
+      - "src/Akeneo/AssetManager/tests/back/Integration/"
     commands:
       - "APP_ENV=dev make up"
       - "make pim-test"
