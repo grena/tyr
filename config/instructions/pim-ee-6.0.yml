@@ -1,11 +1,10 @@
 software: pim-enterprise-dev
-version: master
+version: 6.0
 data:
   -
     comment: "A unit test with PHPSpec"
     folders:
       - "components/tailored-export/back/tests/Specification"
-      - "components/tailored-import/back/tests/Specification"
       - "src/Akeneo/AssetManager/tests/back/spec"
       - "src/Akeneo/ReferenceEntity/tests/back/spec"
     commands:
@@ -26,14 +25,6 @@ data:
     commands:
       - "make pim-test"
       - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c src/Akeneo/ReferenceEntity/tests/back --testsuite ReferenceEntity_Integration_Test {{FILEPATH}}"
-
-  -
-    comment: "An integration test related to Tailored Import"
-    folders:
-      - "components/tailored-import/back/tests/Integration"
-    commands:
-      - "make pim-test"
-      - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c components/tailored-import/back/tests/phpunit-ee.xml --testsuite TailoredImport_Integration_Test {{FILEPATH}}"
 
   -
     comment: "An integration test related to Tailored Export"
