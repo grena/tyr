@@ -1,5 +1,5 @@
-software: pim-enterprise-dev
-version: 6.0
+software: "pim-enterprise-dev"
+version: "6.0"
 data:
   -
     comment: "A unit test with PHPSpec"
