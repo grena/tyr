@@ -9,3 +9,12 @@ data:
       - "APP_ENV=dev make up"
       - "make pim-test"
       - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c src/Akeneo/ReferenceEntity/tests/back --testsuite ReferenceEntity_Integration_Test {{FILEPATH}}"
+
+  -
+    comment: "An integration test related to Assets"
+    folders:
+      - "src/Akeneo/ReferenceEntity/tests/back/Integration/"
+    commands:
+      - "APP_ENV=dev make up"
+      - "make pim-test"
+      - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c src/Akeneo/AssetManager/tests/back --testsuite AssetFamily_Integration_Test {{FILEPATH}}"
