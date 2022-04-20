@@ -1,5 +1,5 @@
-software: pim-community-dev
-version: master
+software: "pim-community-dev"
+version: "master"
 data:
   -
     comment: 'An integration or end-to-end test'
