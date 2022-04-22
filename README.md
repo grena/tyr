@@ -5,7 +5,10 @@
 ## How to use?
 Install the CLI tool on your machine:
 ```bash
+# Download the .sh script
 wget https://raw.githubusercontent.com/grena/tyr/main/tyr.sh && chmod +x tyr.sh
+
+# Make it available as a global command line
 sudo mv tyr.sh /usr/local/bin/tyr
 ```
 
