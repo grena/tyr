@@ -44,7 +44,7 @@ data:
     commands:
       - "APP_ENV=test docker-compose run -u www-data --rm php php vendor/bin/phpspec run {{FILEPATH}}"
 ```
-3) **Merge** your new instructions into the master branch.
+3) **Merge** your new instructions into the `main` branch.
 4) **Deploy TYR on Heroku**!
 
 The new instructions will be available for everyone, you don't need to re-install the CLI tool obviously.
