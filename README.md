@@ -14,14 +14,40 @@ Now, when you want to know how to run a test, just type:
 tyr full/path/to/your/TestFile.php  # make sure it's the path relative to the root of the project 
 ```
 
+## How does it work?
+
+![](https://i.imgur.com/wzU4lou.jpg)
+
 ## How to add instructions to run a test?
-This tool is based on some `.yml` config files in the https://github.com/grena/tyr/tree/main/config/instructions folder, they are really simple, take a look at them.
+This tool is based on some `.yml` config files in the [`config/instructions`](https://github.com/grena/tyr/tree/main/config/instructions) folder, they are really simple, take a look at them.
 
 1) Fork this repo or make the edit through GitHub web interface.
-2) Either create a new `.yml` file or edit an existing one in the `config/instructions/` folder.
-3) Tell for which `folders` the command applies.
-4) Gives the correct `commands` to run the test.
+2) Either **create or edit a `.yml` file** in the [`config/instructions`](https://github.com/grena/tyr/tree/main/config/instructions) folder:
+```yaml 
+software: "pim-community-dev" # could be "pim-enterprise-dev", it's the name of the project in the composer.json file
+version: "master"             # could a specific version, such as "6.0", "5.0", etc.
 
+# Instructions live in this data array
+data:
+  -
+    comment: "A unit test with PHPSpec" # Optional comment to help you organise the instructions
+    
+    # Any file starting with these folders will respond to the command.
+    # Given folders are relative to the root of the project.
+    folders:
+      - "tests/back/Acceptance/spec/"
+      - "tests/back/Channel/Specification/"
+      - "src/Akeneo/Channel/back/tests/Specification/"
+      
+    # The commands to run the test.
+    # You can use the {{FILEPATH}} variable, it will be replaced by the path of the file the user gave.
+    commands:
+      - "APP_ENV=test docker-compose run -u www-data --rm php php vendor/bin/phpspec run {{FILEPATH}}"
+```
+3) **Merge** your new instructions into the master branch.
+4) **Deploy TYR on Heroku**!
+
+The new instructions will be available for everyone, you don't need to re-install the CLI tool obviously.
 
 ## Development
 To develop the API of this tool, you need `docker` && `docker-compose`.
