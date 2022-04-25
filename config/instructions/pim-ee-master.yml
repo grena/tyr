@@ -6,10 +6,16 @@ data:
     folders:
       - "components/tailored-export/back/tests/Specification"
       - "components/tailored-import/back/tests/Specification"
-      - "src/Akeneo/AssetManager/tests/back/spec"
       - "src/Akeneo/ReferenceEntity/tests/back/spec"
     commands:
       - "APP_ENV=test docker-compose run -u www-data --rm php php vendor/bin/phpspec run {{FILEPATH}}"
+
+  -
+    comment: "A unit test with PHPSpec related to Assets"
+    folders:
+      - "src/Akeneo/AssetManager/tests/back/spec"
+    commands:
+      - "O={{FILEPATH}} APP_ENV=test make asset-manager-unit-back"
 
   -
     comment: "An integration test related to Assets"
@@ -17,7 +23,7 @@ data:
       - "src/Akeneo/AssetManager/tests/back/Integration/"
     commands:
       - "make pim-test"
-      - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c src/Akeneo/AssetManager/tests/back --testsuite AssetFamily_Integration_Test {{FILEPATH}}"
+      - "O={{FILEPATH}} APP_ENV=test make asset-manager-integration-back"
 
   -
     comment: "An integration test related to Reference Entities"
@@ -25,7 +31,7 @@ data:
       - "src/Akeneo/ReferenceEntity/tests/back/Integration/"
     commands:
       - "make pim-test"
-      - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c src/Akeneo/ReferenceEntity/tests/back --testsuite ReferenceEntity_Integration_Test {{FILEPATH}}"
+      - "O={{FILEPATH}} APP_ENV=test make reference-entity-integration-back"
 
   -
     comment: "An integration test related to Tailored Import"
@@ -33,7 +39,7 @@ data:
       - "components/tailored-import/back/tests/Integration"
     commands:
       - "make pim-test"
-      - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c components/tailored-import/back/tests/phpunit-ee.xml --testsuite TailoredImport_Integration_Test {{FILEPATH}}"
+      - "O={{FILEPATH}} PIM_CONTEXT=tailored-import make integration-back"
 
   -
     comment: "An integration test related to Tailored Export"
@@ -41,4 +47,4 @@ data:
       - "components/tailored-export/back/tests/Integration"
     commands:
       - "make pim-test"
-      - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c . --testsuite TailoredExport_Integration_Test {{FILEPATH}}"
+      - "O={{FILEPATH}} PIM_CONTEXT=tailored-export make integration-back"
