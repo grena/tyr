@@ -15,7 +15,7 @@ data:
     folders:
       - "src/Akeneo/AssetManager/tests/back/spec"
     commands:
-      - "O={{FILEPATH}} APP_ENV=test make asset-manager-unit-back"
+      - "O={{FILEPATH}} PIM_CONTEXT=asset-manager APP_ENV=test make asset-manager-unit-back"
 
   -
     comment: "An integration test related to Assets"
@@ -23,7 +23,7 @@ data:
       - "src/Akeneo/AssetManager/tests/back/Integration/"
     commands:
       - "make pim-test"
-      - "O={{FILEPATH}} APP_ENV=test make asset-manager-integration-back"
+      - "O={{FILEPATH}} PIM_CONTEXT=asset-manager APP_ENV=test make asset-manager-integration-back"
 
   -
     comment: "An integration test related to Reference Entities"
@@ -31,7 +31,7 @@ data:
       - "src/Akeneo/ReferenceEntity/tests/back/Integration/"
     commands:
       - "make pim-test"
-      - "O={{FILEPATH}} APP_ENV=test make reference-entity-integration-back"
+      - "O={{FILEPATH}} PIM_CONTEXT=reference-entity APP_ENV=test make reference-entity-integration-back"
 
   -
     comment: "An integration test related to Tailored Import"
