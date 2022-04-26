@@ -40,7 +40,7 @@ data:
     commands:
       - "make pim-test"
       - "O={{FILEPATH}} PIM_CONTEXT=tailored-import make integration-back"
-      
+
   -
     comment: "An acceptance test related to Tailored Import"
     folders:
@@ -55,8 +55,8 @@ data:
     commands:
       - "make pim-test"
       - "O={{FILEPATH}} PIM_CONTEXT=tailored-export make integration-back"
-      
-   -
+
+  -
     comment: "An acceptance test related to Tailored Export"
     folders:
       - "components/tailored-export/back/tests/Acceptance/"
