@@ -35,6 +35,7 @@ data:
     comment: "An integration test related to Reference Entities"
     folders:
       - "src/Akeneo/ReferenceEntity/tests/back/Integration/"
+      - "tests/back/Pim/Enrichment/ReferenceEntity/Integration/"
     commands:
       - "make pim-test"
       - "O={{FILEPATH}} PIM_CONTEXT=reference-entity APP_ENV=test make reference-entity-integration-back"
