@@ -69,3 +69,11 @@ data:
       - "components/tailored-export/back/tests/Acceptance/"
     commands:
       - "O={{FILEPATH}} PIM_CONTEXT=tailored-export make acceptance-back"
+
+  -
+    comment: "An integration test related to Enrichment"
+    folders:
+      - "tests/back/Pim/Enrichment/Integration/"
+      - "tests/back/Pim/Enrichment/ReferenceEntity/EndToEnd/"
+    commands:
+      - "O={{FILEPATH}} PIM_CONTEXT=enrichment-product APP_ENV=test make enrichment-product-integration-back"
