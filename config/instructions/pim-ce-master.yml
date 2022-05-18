@@ -8,6 +8,7 @@ data:
       - "tests/back/Channel/EndToEnd/"
       - "tests/back/Channel/Integration/"
       - "tests/back/Pim/Enrichment/EndToEnd"
+      - "upgrades/test_schema/"
     commands:
       - "APP_ENV=dev make up"
       - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c phpunit.xml.dist {{FILEPATH}}"
