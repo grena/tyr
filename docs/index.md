@@ -1,4 +1,4 @@
-# TYR - How to run this test?
+# TYR
 
 **TYR** helps any Akeneo PIM developer to know **how to launch a test file** with the correct commands.
 
