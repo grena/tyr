@@ -38,3 +38,17 @@ data:
     commands:
       - "APP_ENV=dev make up"
       - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c src/Akeneo/Channel/back/tests --testsuite Channel_Integration_Test {{FILEPATH}}"
+
+  -
+    comment: "A frontend unit test related to Tailored Import"
+    folders:
+      - "components/tailored-import/front/src/feature/components/"
+    commands:
+      - "O={{FILEPATH}} PIM_CONTEXT=tailored-import make unit-front"
+
+  -
+    comment: "A frontend unit test related to Tailored Export"
+    folders:
+      - "components/tailored-export/front/src/feature/components/"
+    commands:
+      - "O={{FILEPATH}} PIM_CONTEXT=tailored-export make unit-front"
