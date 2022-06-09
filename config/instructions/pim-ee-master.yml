@@ -77,3 +77,10 @@ data:
       - "tests/back/Pim/Enrichment/ReferenceEntity/EndToEnd/"
     commands:
       - "O={{FILEPATH}} PIM_CONTEXT=enrichment-product APP_ENV=test make enrichment-product-integration-back"
+
+  -
+    comment: "An front unit test related to Tailored Import"
+    folders:
+      - "components/tailored-import/front/src/feature/"
+    commands:
+      - "O={{FILEPATH}} PIM_CONTEXT=tailored-import make unit-front"
