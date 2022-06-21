@@ -20,6 +20,7 @@ data:
       - "tests/back/Channel/Specification/"
       - "src/Akeneo/Channel/back/tests/Specification/"
       - "src/Akeneo/Tool/Component/Batch/spec/"
+      - "tests/back/Pim/Enrichment/Specification/"
     commands:
       - "APP_ENV=test docker-compose run -u www-data --rm php php vendor/bin/phpspec run {{FILEPATH}}"
 
