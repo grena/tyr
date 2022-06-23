@@ -6,6 +6,8 @@ data:
     folders:
       - "components/tailored-export/back/tests/Specification"
       - "components/tailored-import/back/tests/Specification"
+      - "tests/back/Pim/Enrichment/ReferenceEntity/Specification"
+      - "tests/back/Pim/Enrichment/AssetManager/Specification"
     commands:
       - "APP_ENV=test docker-compose run -u www-data --rm php php vendor/bin/phpspec run {{FILEPATH}}"
 
