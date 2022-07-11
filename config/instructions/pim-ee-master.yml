@@ -66,6 +66,14 @@ data:
       - "O={{FILEPATH}} PIM_CONTEXT=tailored-export make integration-back"
 
   -
+    comment: "An integration test related to Job Automation"
+    folders:
+      - "components/job-automation/back/tests/Integration/"
+    commands:
+      - "make pim-test"
+      - "O={{FILEPATH}} PIM_CONTEXT=job-automation make integration-back"
+
+  -
     comment: "An acceptance test related to Tailored Export"
     folders:
       - "components/tailored-export/back/tests/Acceptance/"
