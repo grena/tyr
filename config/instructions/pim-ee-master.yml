@@ -4,10 +4,11 @@ data:
   -
     comment: "A unit test with PHPSpec"
     folders:
-      - "components/tailored-export/back/tests/Specification"
-      - "components/tailored-import/back/tests/Specification"
-      - "tests/back/Pim/Enrichment/ReferenceEntity/Specification"
-      - "tests/back/Pim/Enrichment/AssetManager/Specification"
+      - "components/tailored-export/back/tests/Specification/"
+      - "components/tailored-import/back/tests/Specification/"
+      - "components/job-automation/back/tests/Specification/"
+      - "tests/back/Pim/Enrichment/ReferenceEntity/Specification/"
+      - "tests/back/Pim/Enrichment/AssetManager/Specification/"
     commands:
       - "APP_ENV=test docker-compose run -u www-data --rm php php vendor/bin/phpspec run {{FILEPATH}}"
 
