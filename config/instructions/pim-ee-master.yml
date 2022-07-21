@@ -102,3 +102,11 @@ data:
       - "components/tailored-export/front/src/feature/components/"
     commands:
       - "O={{FILEPATH}} PIM_CONTEXT=tailored-export make unit-front"
+
+  -
+    comment: 'A generic integration test'
+    folders:
+      - "upgrades/test_schema/"
+    commands:
+      - "make pim-test"
+      - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c phpunit.xml.dist {{FILEPATH}}"
