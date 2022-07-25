@@ -8,9 +8,10 @@ data:
       - "tests/back/Channel/EndToEnd/"
       - "tests/back/Channel/Integration/"
       - "tests/back/Pim/Enrichment/EndToEnd"
+      - "src/Akeneo/Pim/Structure/Family/back/Test/Integration/"
       - "upgrades/test_schema/"
     commands:
-      - "APP_ENV=dev make up"
+      - "make pim-test"
       - "APP_ENV=test docker-compose run -u www-data -T php vendor/bin/phpunit -c phpunit.xml.dist {{FILEPATH}}"
 
   -
