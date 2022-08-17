@@ -17,10 +17,11 @@ data:
   -
     comment: "A unit test with PHPSpec"
     folders:
+      - "src/Akeneo/Channel/back/tests/Specification/"
+      - "src/Akeneo/Pim/Enrichment/Product/back/Test/Specification/"
+      - "src/Akeneo/Tool/Component/Batch/spec/"
       - "tests/back/Acceptance/spec/"
       - "tests/back/Channel/Specification/"
-      - "src/Akeneo/Channel/back/tests/Specification/"
-      - "src/Akeneo/Tool/Component/Batch/spec/"
       - "tests/back/Pim/Enrichment/Specification/"
       - "tests/back/Platform/Specification/"
     commands:
